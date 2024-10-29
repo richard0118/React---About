@@ -1,0 +1,169 @@
+import React from 'react';
+
+const About = () => {
+  return (
+    <div style={styles.container}>
+      <h1 style={styles.title}>大家好我今天要來自我介紹</h1>
+      <p style={styles.description}>
+        我是陳奕嘉。我平時喜歡看電影或是聽音樂。
+      </p>
+
+      <div style={styles.linkContainer}>
+        <a href="https://www.youtube.com/watch?v=x3tMqlhGlQo&pp=sAQB" style={styles.link}>電影</a>
+        <span>和</span>
+        <a href="https://www.youtube.com/watch?v=MLlSSJ0z7xM&list=RDCLAK5uy_mOmfogvkugBD9vd5EbejT2y82WidC6as0&index=2" style={styles.link}>音樂</a>
+      </div>
+
+      <img 
+        src="https://i-blog.csdnimg.cn/blog_migrate/b6b817d3a84c843373f929d77bcb4819.gif" 
+        alt="" 
+        style={styles.image}
+      />
+
+      <h2 style={styles.subTitle}>我喜歡的顏色</h2>
+      <ul style={styles.list}>
+        <li>藍色</li>
+        <li>白色</li>
+        <li>黑色</li>
+        <li>紫色</li>
+      </ul>
+
+      <h2 style={styles.subTitle}>我喜歡的水果</h2>
+      <ol style={styles.list}>
+        <li>草莓</li>
+        <li>橘子</li>
+        <li>西瓜</li>
+        <li>芒果</li>
+      </ol>
+
+      <Form />
+      <Table />
+      <CommentsSection />
+    </div>
+  );
+};
+
+const Form = () => (
+  <form style={styles.form}>
+    <Label text="姓名:" />
+    <Input id="name" />
+    <SubmitButton />
+  </form>
+);
+
+const Table = () => (
+  <table style={styles.table}>
+    <thead>
+      <tr>
+        <th>名稱</th>
+        <th>年齡</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>陳奕嘉</td>
+        <td>20</td>
+      </tr>
+    </tbody>
+  </table>
+);
+
+const CommentsSection = () => (
+  <section style={styles.commentsSection}>
+    <h4>其他</h4>
+    <form style={styles.form}>
+      <Label text="發送留言:" />
+      <Input id="comment" placeholder="輸入留言" />
+      <SubmitButton />
+    </form>
+    <p><span style={styles.highlight}>留言功能暫不開放</span></p>
+  </section>
+);
+
+const Label = ({ text }) => <label style={styles.label}>{text}</label>;
+const Input = ({ id, placeholder }) => (
+  <input type="text" id={id} placeholder={placeholder} style={styles.input} />
+);
+const SubmitButton = () => (
+  <input type="submit" value="提交" style={styles.submitButton} />
+);
+
+const styles = {
+  container: {
+    padding: '20px',
+    maxWidth: '600px',
+    margin: 'auto',
+    textAlign: 'left',
+    fontFamily: 'Arial, sans-serif',
+    lineHeight: '1.6',
+    backgroundColor: '#f9f9f9',
+    borderRadius: '8px',
+    boxShadow: '0 2px 10px rgba(0,0,0,0.1)',
+  },
+  title: {
+    color: '#333',
+  },
+  description: {
+    color: '#555',
+  },
+  linkContainer: {
+    margin: '10px 0',
+  },
+  link: {
+    color: '#007bff',
+    textDecoration: 'none',
+    marginRight: '5px',
+  },
+  image: {
+    maxWidth: '100%',
+    height: 'auto',
+    borderRadius: '8px',
+    margin: '10px 0',
+  },
+  subTitle: {
+    marginTop: '20px',
+    color: '#444',
+  },
+  list: {
+    paddingLeft: '20px',
+  },
+  form: {
+    marginTop: '20px',
+  },
+  label: {
+    display: 'block',
+    marginBottom: '5px',
+  },
+  input: {
+    margin: '5px 0',
+    padding: '10px',
+    width: '100%',
+    border: '1px solid #ccc',
+    borderRadius: '4px',
+  },
+  submitButton: {
+    padding: '10px 15px',
+    backgroundColor: '#007bff',
+    color: '#fff',
+    border: 'none',
+    borderRadius: '4px',
+    cursor: 'pointer',
+  },
+  table: {
+    width: '100%',
+    marginTop: '20px',
+    borderCollapse: 'collapse',
+  },
+  commentsSection: {
+    marginTop: '20px',
+    padding: '10px',
+    border: '1px solid #ccc',
+    borderRadius: '4px',
+    backgroundColor: '#fff',
+  },
+  highlight: {
+    color: 'red',
+  },
+};
+
+export default About;
